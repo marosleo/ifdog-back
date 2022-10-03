@@ -1,4 +1,4 @@
-#!/home/aluno/backenddog/back-dj-python/.venv/bin/python3
+#!/home/aluno/Downloads/horseti/back/ifdog-back/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
