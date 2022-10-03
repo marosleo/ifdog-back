@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.text import slugify
 from django.db.models.signals import post_save
+from media.models import Image
+
 
 
 # class User(models.Model):
@@ -26,6 +28,14 @@ from django.db.models.signals import post_save
 class Cachorro(models.Model): #cards dos cachorros
     nome = models.CharField(max_length=100)
     descricao = models.TextField()
+    foto = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=None,
+    )
 
     
     def __str__(self):

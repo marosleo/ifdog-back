@@ -7,6 +7,11 @@ from django.contrib import admin
 from core import views
 from rest_framework_simplejwt.views import TokenRefreshView
 from core.views import CachorroViewSet, ComedouroViewSet, TagViewSet, PublicacoesViewSet, RegistrationViewSet, ComentariosViewSet, MyTokenObtainPairView
+from django.conf import settings
+from django.conf.urls.static import static
+from media.router import router as media_router
+
+path("api/media/", include(media_router.urls)),
 
 router = DefaultRouter()
 router.register(r'cachorros', CachorroViewSet)
@@ -28,3 +33,4 @@ urlpatterns = [
     
 ]
 
+urlpatterns += static(settings.MEDIA_ENDPOINT, document_root=settings.MEDIA_ROOT)
