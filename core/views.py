@@ -3,7 +3,7 @@ from rest_framework import generics
 from django.contrib.auth.models import User
 from .models import Cachorro, Publicacoes, Comedouro, Tag, Comentarios
 from rest_framework.viewsets import ModelViewSet
-from .serializers import RegistrationSerializer, PublicacoesSerializer, TagSerializer, ComedouroSerializer, CachorroSerializer, ComentariosSerializer
+from .serializers import RegistrationSerializer, PublicacoesSerializer, TagSerializer, ComedouroSerializer, CachorroSerializer, ComentariosSerializer, DetailComentariosSerializer
 from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
@@ -24,6 +24,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super().validate(attrs)
         data['username'] = self.user.username
+        data['id'] = self.user.id
 
         return data
 
@@ -73,5 +74,10 @@ class PublicacoesViewSet(ModelViewSet):
 class ComentariosViewSet(ModelViewSet):
     queryset = Comentarios.objects.all()
     serializer_class = ComentariosSerializer 
+
+    def get_serializer_class(self):
+        if self.action in ["list", "retrieve"]:
+            return DetailComentariosSerializer
+        return ComentariosSerializer
    
 

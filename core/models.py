@@ -68,9 +68,9 @@ class Publicacoes(models.Model):
         return self.titulo
 
 class Comentarios(models.Model):
-    comentario = models.TextField()
+    texto = models.TextField()
     autor  = models.ForeignKey(User,on_delete=models.CASCADE)
     publicado = publicado = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.comentario
+        return self.texto
