@@ -73,4 +73,5 @@ class PublicacoesViewSet(ModelViewSet):
 class ComentariosViewSet(ModelViewSet):
     queryset = Comentarios.objects.all()
     serializer_class = ComentariosSerializer 
+   
 
