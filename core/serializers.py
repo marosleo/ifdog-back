@@ -70,6 +70,13 @@ class TagSerializer(ModelSerializer):
         model = Tag
         fields = "__all__"
 
+class DetailTagSerializer(ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = "__all__"
+        depth = 1
+
+
 class PublicacoesSerializer(ModelSerializer):
     class Meta:
         model = Publicacoes

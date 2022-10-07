@@ -3,7 +3,7 @@ from rest_framework import generics
 from django.contrib.auth.models import User
 from .models import Cachorro, Publicacoes, Comedouro, Tag, Comentarios
 from rest_framework.viewsets import ModelViewSet
-from .serializers import RegistrationSerializer, PublicacoesSerializer, TagSerializer, ComedouroSerializer, CachorroSerializer, ComentariosSerializer, DetailComentariosSerializer
+from .serializers import RegistrationSerializer, PublicacoesSerializer, TagSerializer, ComedouroSerializer, CachorroSerializer, ComentariosSerializer, DetailComentariosSerializer, DetailTagSerializer
 from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
@@ -66,6 +66,11 @@ class ComedouroViewSet(ModelViewSet):
 class TagViewSet(ModelViewSet):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
+
+    def get_serializer_class(self):
+        if self.action in ["list", "retrieve"]:
+            return DetailTagSerializer
+        return TagSerializer
 
 class PublicacoesViewSet(ModelViewSet):
     queryset = Publicacoes.objects.all()

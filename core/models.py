@@ -36,7 +36,8 @@ class Cachorro(models.Model): #cards dos cachorros
         blank=True,
         default=None,
     )
-
+    peso = models.DecimalField(max_digits=8, decimal_places=2)
+    altura = models.DecimalField(max_digits=8, decimal_places=2)
     
     def __str__(self):
         return self.nome
