@@ -25,6 +25,8 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         data = super().validate(attrs)
         data['username'] = self.user.username
         data['id'] = self.user.id
+        data['email'] = self.user.email
+        
 
         return data
 
@@ -79,6 +81,7 @@ class PublicacoesViewSet(ModelViewSet):
 class ComentariosViewSet(ModelViewSet):
     queryset = Comentarios.objects.all()
     serializer_class = ComentariosSerializer 
+    permission_classes = [AllowAny]
 
     def get_serializer_class(self):
         if self.action in ["list", "retrieve"]:
