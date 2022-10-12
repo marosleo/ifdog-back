@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    "drf_spectacular",
     'media',
     'core',
 ]
@@ -142,12 +143,6 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.IsAuthenticated',
-        
-#     ],
-# }
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
@@ -159,3 +154,12 @@ REST_FRAMEWORK = {
     )
 }
 
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "IFDOG",
+    "DESCRIPTION": "Software para o Instituto Federal Catarinense em relação aos cães do instituto, desenvolvido para o projeto integrador dos alunos: Gustavo Reis Teuber da Silva, Vinicius Reis Teuber da Silva, Leonardo Maros e Bryann Locatelli",
+    "VERSION": "1.0.0",
+}
