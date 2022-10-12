@@ -1,10 +1,12 @@
-from asyncore import write
 import email
-from rest_framework.serializers import ModelSerializer
-from rest_framework import serializers
+from asyncore import write
+
 from django.contrib.auth.models import User
-from core.models import Cachorro, Comedouro, Tag, Publicacoes, User, Comentarios
-from rest_framework.serializers import ModelSerializer,                  SlugRelatedField
+
+from rest_framework import serializers
+from rest_framework.serializers import ModelSerializer, SlugRelatedField
+
+from core.models import Cachorro, Comedouro, Comentarios, Publicacoes, Tag, User
 from media.models import Image
 from media.serializers import ImageSerializer
 

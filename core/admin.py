@@ -1,5 +1,6 @@
 from django.contrib import admin
-from core.models import Cachorro, Comedouro, Tag, Publicacoes, Comentarios
+
+from core.models import Cachorro, Comedouro, Comentarios, Publicacoes, Tag
 
 admin.site.register(Cachorro)
 admin.site.register(Comedouro)

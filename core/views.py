@@ -1,10 +1,22 @@
 from django.contrib.auth.models import User
-from .models import Cachorro, Publicacoes, Comedouro, Tag, Comentarios
+
+from rest_framework.permissions import AllowAny
 from rest_framework.viewsets import ModelViewSet
-from .serializers import RegistrationSerializer, PublicacoesSerializer, TagSerializer, ComedouroSerializer, CachorroSerializer, ComentariosSerializer, DetailComentariosSerializer, DetailTagSerializer
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework.permissions import AllowAny
+
+from .models import Cachorro, Comedouro, Comentarios, Publicacoes, Tag
+from .serializers import (
+    CachorroSerializer,
+    ComedouroSerializer,
+    ComentariosSerializer,
+    DetailComentariosSerializer,
+    DetailTagSerializer,
+    PublicacoesSerializer,
+    RegistrationSerializer,
+    TagSerializer,
+)
+
 
 class RegistrationViewSet(ModelViewSet):
     queryset = User.objects.all()

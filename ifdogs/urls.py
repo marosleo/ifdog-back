@@ -1,17 +1,26 @@
-from django.contrib import admin
-from django.urls import include, path
-from rest_framework.routers import DefaultRouter
-from django.contrib import admin
-from rest_framework_simplejwt.views import TokenRefreshView
-from core.views import CachorroViewSet, ComedouroViewSet, TagViewSet, PublicacoesViewSet, RegistrationViewSet, ComentariosViewSet, MyTokenObtainPairView
 from django.conf import settings
 from django.conf.urls.static import static
-from media.router import router as media_router
+from django.contrib import admin
+from django.urls import include, path
+
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
+from rest_framework.routers import DefaultRouter
+from rest_framework_simplejwt.views import TokenRefreshView
+
+from core.views import (
+    CachorroViewSet,
+    ComedouroViewSet,
+    ComentariosViewSet,
+    MyTokenObtainPairView,
+    PublicacoesViewSet,
+    RegistrationViewSet,
+    TagViewSet,
+)
+from media.router import router as media_router
 
 path("api/media/", include(media_router.urls)),
 
@@ -38,5 +47,4 @@ urlpatterns = [
     ),
     
 ]
-
 urlpatterns += static(settings.MEDIA_ENDPOINT, document_root=settings.MEDIA_ROOT)
