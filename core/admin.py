@@ -12,7 +12,7 @@ admin.site.register(Usuario)
 
 class UsuarioAdmin(UserAdmin):
     fieldsets = (
-        (None, {"fields": ("username", "password")}),
+        (None, {"fields": ("username", "password",'password_confirmation')}),
         (_("Personal info"), {"fields": ("first_name", "last_name", "email", "foto")}),
         (
             _("Permissions"),
