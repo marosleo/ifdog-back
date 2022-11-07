@@ -174,3 +174,6 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Software para o Instituto Federal Catarinense em relação aos cães do instituto, desenvolvido para o projeto integrador dos alunos: Gustavo Reis Teuber da Silva, Vinicius Reis Teuber da Silva, Leonardo Maros e Bryann Locatelli",
     "VERSION": "1.0.0",
 }
+
+AUTH_USER_MODEL = "core.Usuario"
+

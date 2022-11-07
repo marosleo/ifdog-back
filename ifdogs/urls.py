@@ -17,7 +17,7 @@ from core.views import (
     ComentariosViewSet,
     MyTokenObtainPairView,
     PublicacoesViewSet,
-    RegistrationViewSet,
+    UsuarioViewSet,
     TagViewSet,
 )
 from media.router import router as media_router
@@ -29,7 +29,7 @@ router.register(r'cachorros', CachorroViewSet)
 router.register(r'comedouro', ComedouroViewSet)
 router.register(r'tags', TagViewSet)
 router.register(r'publis', PublicacoesViewSet)
-router.register(r'auth', RegistrationViewSet)
+router.register(r'usuarios', UsuarioViewSet)
 router.register(r'coments', ComentariosViewSet)
 
 
