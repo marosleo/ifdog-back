@@ -8,7 +8,7 @@ class CachorroSerializer(ModelSerializer):
         model = Cachorro
         fields = "__all__"
     foto_attachment_key = SlugRelatedField(
-        source="capa",
+        source="foto",
         queryset=Image.objects.all(),
         slug_field="attachment_key",
         required=False,
