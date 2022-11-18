@@ -14,6 +14,7 @@ class UsuarioSerializer(ModelSerializer):
         slug_field="attachment_key",
         required=False,
         write_only=True,
+        
     )
     foto = ImageSerializer(required=False, read_only=True)
     

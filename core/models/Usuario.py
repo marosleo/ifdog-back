@@ -11,5 +11,5 @@ class Usuario(AbstractUser):
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        default=None,
+        default="",
     )
