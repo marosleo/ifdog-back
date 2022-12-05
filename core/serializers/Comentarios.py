@@ -1,5 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 from core.models import Comentarios
+from rest_framework import serializers
 
 class ComentariosSerializer(ModelSerializer):
     class Meta:
