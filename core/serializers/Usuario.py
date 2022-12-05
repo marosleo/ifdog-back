@@ -36,11 +36,11 @@ class UsuarioSerializer(ModelSerializer):
         print(password)
         print(password_confirmation)
         if password != password_confirmation:
-            raise serializers.ValidationError({'password': ('passwords does not match')})
+            raise serializers.ValidationError({'password': ('as senhas não são iguais')})
         if Usuario.objects.filter(email=email).exists():
-            raise serializers.ValidationError({'email': ('email already exists')})
+            raise serializers.ValidationError({'email': ('esse email já está cadastrado')})
         if Usuario.objects.filter(username=username).exists():
-            raise serializers.ValidationError({'username': ('username already exists')})
+            raise serializers.ValidationError({'username': ('esse nome de usuario já está em uso')})
 
         return super().validate(args)
   
