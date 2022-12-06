@@ -8,7 +8,7 @@ from media.models import Image
 class Tag(models.Model):
     local  = models.ForeignKey(Comedouro,on_delete=models.PROTECT)
     cachorro = models.ForeignKey(Cachorro,on_delete=models.PROTECT)
-    hora = models.DateTimeField(default=timezone.now)
+    hora = models.DateTimeField(auto_now=True)
     foto = models.ForeignKey(
         Image,
         related_name="+",
