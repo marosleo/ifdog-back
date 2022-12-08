@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'ifdogs.wsgi.application'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:8000' , 'http://127.0.0.1:8000']
+CORS_ALLOWED_ORIGINS = ['http://localhost:8000' , 'http://127.0.0.1:8000', 'https://horseti.pythonanywhere.com/']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -132,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-MEDIA_URL = "http://localhost:8000/media/"
+MEDIA_URL = "https://horseti.pythonanywhere.com/media/"
 MEDIA_ENDPOINT = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_files/")
 FILE_UPLOAD_PERMISSIONS = 0o640
