@@ -17,7 +17,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'django-insecure-+kzcue519&9zc6&$tex#e4198048s@&@hb6j3fi%vtk#cqo8d6'
 # DEBUG = True
 # ALLOWED_HOSTS = ['*']
-
 env = environ.Env()
 environ.Env.read_env((os.path.join(BASE_DIR, '.env')))
 
